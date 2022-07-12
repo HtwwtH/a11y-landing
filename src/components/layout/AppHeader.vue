@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <header class="header container">
     <nav class="header__nav" aria-label="Навигация по магазину для грызунов">
@@ -26,6 +22,12 @@
     </nav>
   </header>
 </template>
+
+<script>
+    export default {
+        name: 'AppHeader',
+    }
+</script>
 
 <style lang="scss">
     .header {

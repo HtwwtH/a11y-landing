@@ -1,74 +1,3 @@
-<script setup>
-  import CatalogSorting from '@/components/page-components/CatalogSorting.vue'
-  import CatalogCards from '@/components/page-components/CatalogCards.vue'
-
-  import { ref } from 'vue'
-
-  const options = [
-    {
-      id: 0,
-      value: 'По возрастанию цены',
-    },
-    {
-      id: 1,
-      value: 'По убыванию цены',
-    },
-    {
-      id: 2,
-      value: 'По популярности',
-    },
-    {
-      id: 3,
-      value: 'Нет сортировки',
-    },
-  ] 
-  const chosenOption = ref(null)
-  const setValue = (id) => {
-    chosenOption.value = options[id];
-  }
-
-  const products = [
-    {
-      id: 0,
-      title: 'Коврик для хомяка',
-      image: 'src/assets/images/products/hamsters/carpet.jpg',
-      imageAlt: 'Хомячок на мягком пушистом коврике',
-      oldPrice: 200,
-      price: 100,
-    },
-    {
-      id: 1,
-      title: 'Опилки для хомяка',
-      image: 'src/assets/images/products/hamsters/opilki.jpg',
-      imageAlt: 'Хомячок на опилках',
-      oldPrice: 200,
-      price: 100,
-    },
-    {
-      id: 2,
-      title: 'Тоннель для хомяка',
-      image: 'src/assets/images/products/hamsters/tunnel.jpg',
-      imageAlt: 'Хомячок в туннеле',
-      price: 50,
-    },
-    {
-      id: 3,
-      title: 'Еда для хомячков',
-      image: 'src/assets/images/products/hamsters/food.jpg',
-      imageAlt: 'Зерна и сушеные овощи',
-      price: 100,
-    },
-    {
-      id: 4,
-      title: 'Дом для хомяка',
-      image: 'src/assets/images/products/hamsters/house.jpg',
-      imageAlt: 'Желтый пластиковый дом для хомяка',
-      oldPrice: 500,
-      price: 400,
-    },
-  ]
-</script>
-
 <template>
   <main id="main-content" class="content container">
     <section class="content__catalog">
@@ -80,7 +9,7 @@
         :options="options"
         @set-value="setValue"
       />
-      <catalog-cards :products="products" />
+      <catalog-cards :products="sortedProducts" />
     </section>
 
     <section class="content__video">
@@ -100,11 +29,106 @@
 
     <section class="content__tabs">
       <h2 class="h2">Подробнее о товарах для хомяков</h2>
-
-      
+      <content-tabs />
     </section>
+
+    <app-modal />
   </main>
 </template>
+
+<script setup>
+  import CatalogSorting from '@/components/page-components/CatalogSorting.vue'
+  import CatalogCards from '@/components/page-components/CatalogCards.vue'
+  import ContentTabs from '@/components/page-components/ContentTabs.vue'
+  import AppModal from '@/components/layout/AppModal.vue'
+
+  import { ref, computed } from 'vue'
+
+  const options = [
+    {
+      id: 0,
+      value: 'По возрастанию цены',
+    },
+    {
+      id: 1,
+      value: 'По убыванию цены',
+    },
+    {
+      id: 2,
+      value: 'По популярности',
+    },
+    {
+      id: 3,
+      value: 'Нет сортировки',
+    },
+  ]
+
+  const chosenOption = ref(null)
+
+  const setValue = (id) => {
+    console.log('setValue')
+    chosenOption.value = options[id];
+  }
+
+  const products = ref([
+    {
+      id: 0,
+      title: 'Коврик для хомяка',
+      image: 'src/assets/images/products/hamsters/carpet.jpg',
+      imageAlt: 'Хомячок на мягком пушистом коврике',
+      oldPrice: 200,
+      price: 100,
+      rating: 4,
+    },
+    {
+      id: 1,
+      title: 'Опилки для хомяка',
+      image: 'src/assets/images/products/hamsters/opilki.jpg',
+      imageAlt: 'Хомячок на опилках',
+      oldPrice: 200,
+      price: 100,
+      rating: 5,
+    },
+    {
+      id: 2,
+      title: 'Тоннель для хомяка',
+      image: 'src/assets/images/products/hamsters/tunnel.jpg',
+      imageAlt: 'Хомячок в туннеле',
+      price: 50,
+      rating: 4.5,
+    },
+    {
+      id: 3,
+      title: 'Еда для хомячков',
+      image: 'src/assets/images/products/hamsters/food.jpg',
+      imageAlt: 'Зерна и сушеные овощи',
+      price: 100,
+      rating: 5,
+    },
+    {
+      id: 4,
+      title: 'Дом для хомяка',
+      image: 'src/assets/images/products/hamsters/house.jpg',
+      imageAlt: 'Желтый пластиковый дом для хомяка',
+      oldPrice: 500,
+      price: 400,
+      rating: 3,
+    },
+  ])
+
+  const sortedProducts = computed(() => {
+    if (chosenOption.value && chosenOption.value.id === 0) {
+      return products.value.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0))
+    }
+    else if (chosenOption.value && chosenOption.value.id === 1) {
+      return products.value.sort((a, b) => (a.price < b.price) ? 1 : ((b.price < a.price) ? -1 : 0))
+    }
+    else if (chosenOption.value && chosenOption.value.id === 2) {
+      return products.value.sort((a, b) => (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0))
+    }
+    return products.value;
+  })
+</script>
 
 <style lang="scss">
   .h1 {

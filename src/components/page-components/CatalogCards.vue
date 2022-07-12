@@ -18,13 +18,13 @@
         </div>
 
         <div class="card__details">
-          <h2
+          <span
             tabindex="0"
             :id="`card-${index}-heading`"
             class="card__title"
           >
             {{ product.title }}
-          </h2>
+          </span>
 
           <div class="card__price">
             <div tabindex="0">
@@ -53,7 +53,7 @@
           <button
             :aria-label="`Купить ${product.title}`"
             type="button"
-            class="card__button"
+            class="card__button button button--black"
           >
             Купить
           </button>
@@ -153,31 +153,6 @@ export default {
         font-size: 24px;
         line-height: 29px;
         text-decoration: line-through;
-      }
-    }
-
-    &__button {
-      padding: 12px 24px;
-      width: 100%;
-      color: $white;
-      font-size: 24px;
-      line-height: 29px;
-      background-color: $black;
-      box-sizing: border-box;
-      border-radius: 5px;
-      transition: all .3s ease;
-
-      &:focus {
-        outline: 2px solid $gray;
-      }
-
-      &:focus-within {
-        box-shadow: 0 0 0 0.25rem;
-      }
-
-      &:hover {
-        cursor: pointer;
-        opacity: .7;
       }
     }
   }

@@ -37,8 +37,8 @@
           aria-labelledby="combobox-label"
           :aria-activedescendant="activeDescendant"
           tabindex="-1"
-          @keyup.up.prevent="selectPrevOption"
-          @keyup.down.prevent="selectNextOption"
+          @keydown.up.prevent="selectPrevOption"
+          @keydown.down.prevent="selectNextOption"
           @keydown.enter.space.prevent="setValue"
           @keydown.esc.prevent="reset"
         >
@@ -65,7 +65,7 @@
 import vClickOutside from 'click-outside-vue3'
 
 export default {
-  name: 'FormSelect',
+  name: 'CatalogSorting',
 
   directives: {
     clickOutside: vClickOutside.directive
@@ -125,7 +125,7 @@ export default {
       this.optionsVisible = true;
       await this.$nextTick();
       this.$refs.optionsMenu.focus();
-      this.chosenOptionIndex = 0;
+      this.chosenOptionIndex = this.chosenOption?.id || -1;
     },
     hideOptions() {
       this.optionsVisible = false;
@@ -206,6 +206,10 @@ export default {
 
   .combobox .options {
     &__list {
+          position: absolute;
+      width: 289px;
+      background: $white;
+
       margin-top: 5px;
 
       border: 1px solid $black;
