@@ -35,6 +35,7 @@
       id="tabpanel-1"
       role="tabpanel"
       aria-labelledby="tab-1"
+      tabindex="0"
       class="tabpanel__content"
       :class="{ 'd-none' : activeTab !== 1 }"
     >
@@ -50,6 +51,7 @@
       id="tabpanel-2"
       role="tabpanel"
       aria-labelledby="tab-2"
+      tabindex="0"
       class="tabpanel__content"
       :class="{ 'd-none' : activeTab !== 2 }"
     >
@@ -66,20 +68,11 @@
 export default {
   name: 'ContentTabs',
 
-  components: {
-  },
-
-  props: {
-  },
-
   data() {
     return {
       activeTab: 1,
       selectedTab: 1,
     }
-  },
-  
-  computed: {
   },
 
   methods: {

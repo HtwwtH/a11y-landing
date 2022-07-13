@@ -13,7 +13,7 @@
     </section>
 
     <section class="content__video">
-      <h2 class="h2">Видео о товарах для хомяков</h2>
+      <h2 class="h1">Видео о товарах для хомяков</h2>
       <div class="video">
         <iframe
           width="560"
@@ -28,11 +28,11 @@
     </section>
 
     <section class="content__tabs">
-      <h2 class="h2">Подробнее о товарах для хомяков</h2>
+      <h2 class="h1">Подробнее о товарах для хомяков</h2>
       <content-tabs />
     </section>
 
-    <app-modal />
+    <app-modal v-if="modalVisible" />
   </main>
 </template>
 
@@ -43,6 +43,7 @@
   import AppModal from '@/components/layout/AppModal.vue'
 
   import { ref, computed } from 'vue'
+  import { useStore } from 'vuex'
 
   const options = [
     {
@@ -128,6 +129,10 @@
     }
     return products.value;
   })
+
+  const store = useStore()
+
+  const modalVisible = computed(() => store.getters.modalVisible)
 </script>
 
 <style lang="scss">

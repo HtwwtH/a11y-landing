@@ -54,6 +54,7 @@
             :aria-label="`Купить ${product.title}`"
             type="button"
             class="card__button button button--black"
+            @click="setModal(product.title)"
           >
             Купить
           </button>
@@ -67,6 +68,8 @@
 <script>
 import vClickOutside from 'click-outside-vue3'
 
+import { useStore } from 'vuex'
+
 export default {
   name: 'CatalogCards',
 
@@ -76,20 +79,28 @@ export default {
 
   props: {
     products: {
-      type: Object,
-      default: () => {}
-    }
+        type: Object,
+        default: () => {}
+      }
   },
 
-  data() {
+  setup (props) {
+    const store = useStore()
+    const products = props.products
+
+    const setModalTitle = (title) => store.commit('setModalTitle', title)
+    const showModal = (status) => store.commit('showModal', status)
+
+    const setModal = (title) => {
+      console.log('setModal ', title)
+      setModalTitle(title)
+      showModal(true)
+    }
+
     return {
+      setModal,
+      products
     }
-  },
-  
-  computed: {
-  },
-
-  methods: {
   }
 }
 </script>
