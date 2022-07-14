@@ -44,6 +44,7 @@ export function useProducts() {
     })
 
     return {
+        options,
         chosenOption,
         sortedproductsList,
         setValue

@@ -1,6 +1,6 @@
 <template>
   <div class="tabs">
-    <div role="tablist" aria-labelledby="tablist-1" class="manual">
+    <div role="tablist" class="manual">
       <button
         ref="tab1"
         id="tab-1"

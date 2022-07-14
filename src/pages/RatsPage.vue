@@ -50,7 +50,7 @@
   import { useModal, useProducts } from '@/hooks/usePage.js'
 
   const { modalVisible, thankModalVisible, showThankModal } = useModal()
-  const { chosenOption, sortedproductsList, setValue } = useProducts()
+  const { options, chosenOption, sortedproductsList, setValue } = useProducts()
 
 </script>
 
