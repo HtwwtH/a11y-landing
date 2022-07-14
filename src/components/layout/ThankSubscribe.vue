@@ -11,7 +11,7 @@
             @keyup.esc.prevent="hideModal"
             tabindex="0"
         >
-            <h2 id="modal_label" class="h2">Спасибо за заказ!</h2>
+            <h2 id="modal_label" class="h2">Спасибо за подписку!</h2>
             <button
                 type="button"
                 class="modal__submit button button--black"
@@ -28,11 +28,11 @@
 <script>
 import vClickOutside from 'click-outside-vue3'
 
-import { onMounted, onUnmounted, ref, computed } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
-    name: 'ThankModal',
+    name: 'ThankSubscribe',
 
     directives: {
         clickOutside: vClickOutside.directive
@@ -43,10 +43,8 @@ export default {
     setup (props, { emit }) {
         const store = useStore()
 
-        const modalMessage = computed(() => store.state.thankModalTitle)
-
         const hideModal = () => {
-            store.commit('hideThankModal')
+            store.commit('hideThankSubscribe')
             emit('closeThank')
         }
 
@@ -63,7 +61,6 @@ export default {
 
         return {
             hideModal,
-            modalMessage,
             formRef
         }
     }

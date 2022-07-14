@@ -93,7 +93,7 @@ export default {
 <style scoped lang="scss">
   .tabs {
     padding: 0 12px;
-    margin-bottom: 94px;
+    margin-bottom: 64px;
     .button {
       width: 280px;
       margin-right: 22px;

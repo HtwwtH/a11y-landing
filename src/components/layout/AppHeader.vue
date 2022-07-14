@@ -2,7 +2,7 @@
   <header class="header container">
     <nav class="header__nav" aria-label="Навигация по магазину для грызунов">
         <a class="skip-link" href="#main-content" title="К основному контенту">К основному контенту</a>
-        <ul class="header__menulist" role="menubar" aria-label="Mythical University">
+        <ul class="header__menulist" role="menubar">
             <li class="header__menuitem" role="none">
                 <router-link role="menuitem" class="link" to="/">
                     Товары для хомяков

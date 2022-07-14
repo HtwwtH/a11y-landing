@@ -78,7 +78,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "Select"
+      default: "Нет сортировки"
     },
     options: {
       type: Array,
@@ -200,7 +200,7 @@ export default {
     }
 
     &__placeholder {
-      color: $gray;
+      color: $mediumGray;
     }
   }
 

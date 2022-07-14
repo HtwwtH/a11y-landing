@@ -32,9 +32,6 @@
       <h2 class="h1">Подробнее о товарах для морских свинок</h2>
       <content-tabs :tabs="tabs" />
     </section>
-
-    <app-modal v-if="modalVisible" @showThankModal="showThankModal" />
-    <thank-modal v-if="thankModalVisible" />
   </main>
 </template>
 
@@ -42,14 +39,11 @@
   import CatalogSorting from '@/components/page-components/CatalogSorting.vue'
   import CatalogCards from '@/components/page-components/CatalogCards.vue'
   import ContentTabs from '@/components/page-components/ContentTabs.vue'
-  import AppModal from '@/components/layout/AppModal.vue'
-  import ThankModal from '@/components/layout/ThankModal.vue'
 
   import { tabs } from '@/bd/hamsters.js'
 
-  import { useModal, useProducts } from '@/hooks/usePage.js'
+  import { useProducts } from '@/hooks/usePage.js'
 
-  const { modalVisible, thankModalVisible, showThankModal } = useModal()
   const { options, chosenOption, sortedproductsList, setValue } = useProducts()
 
 </script>

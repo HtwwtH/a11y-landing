@@ -4,8 +4,9 @@ export default createStore({
   state () {
     return {
       modalVisible: false,
-      thankModalVisible: false,
       modalTitle: '',
+      thankModalVisible: false,
+      thankSubscribeVisible: false,
     }
   },
   mutations: {
@@ -29,6 +30,14 @@ export default createStore({
     hideThankModal(state) {
       state.thankModalVisible = false
     },
+
+    showThankSubscribe(state) {
+      state.thankSubscribeVisible = true
+    },
+
+    hideThankSubscribe(state) {
+      state.thankSubscribeVisible = false
+    },
   },
   getters: {
     modalVisible(state) {
@@ -37,6 +46,10 @@ export default createStore({
 
     thankModalVisible(state) {
         return state.thankModalVisible
+    },
+
+    thankSubscribeVisible(state) {
+        return state.thankSubscribeVisible
     }
   }
 })

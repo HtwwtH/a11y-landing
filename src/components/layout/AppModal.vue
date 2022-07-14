@@ -2,7 +2,6 @@
   <div class="modal">
     <div class="modal__bg">
         <form
-            v-if="modalVisible"
             ref="formRef"
             role="dialog"
             class="modal__body"
@@ -77,15 +76,11 @@
                 Отправить
             </button>
         </form>
-
-        <thank-modal v-else-if="thankModalVisible" />
     </div>
   </div>
 </template>
 
 <script>
-import ThankModal from '@/components/layout/ThankModal.vue'
-
 import vClickOutside from 'click-outside-vue3'
 import useVuelidate from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
@@ -95,10 +90,6 @@ import { useStore } from 'vuex'
 
 export default {
     name: 'AppModal',
-
-    components: {
-        ThankModal
-    },
 
     directives: {
         clickOutside: vClickOutside.directive
@@ -123,9 +114,6 @@ export default {
         const v$ = useVuelidate(rules, state)
 
         const hideModal = () => store.commit('hideModal')
-
-        const modalVisible = computed(() => store.getters.modalVisible)
-        const thankModalVisible = computed(() => store.getters.thankModalVisible)
 
         const submitForm = async() => {
             const isFormCorrect = await v$.value.$validate()
@@ -160,8 +148,6 @@ export default {
         return {
             hideModal,
             submitForm,
-            modalVisible,
-            thankModalVisible,
             formRef,
             inputs,
             productTitle,
