@@ -4,19 +4,19 @@
         <a class="skip-link" href="#main-content" title="К основному контенту">К основному контенту</a>
         <ul class="header__menulist" role="menubar" aria-label="Mythical University">
             <li class="header__menuitem" role="none">
-                <a role="menuitem" class="link" href="/">
+                <router-link role="menuitem" class="link" to="/">
                     Товары для хомяков
-                </a>
+                </router-link>
             </li>
             <li class="header__menuitem" role="none">
-                <a role="menuitem" class="link" href="/">
+                <router-link role="menuitem" class="link" to="/guinea-pigs">
                     Товары для морских свинок
-                </a>
+                </router-link>
             </li>
             <li class="header__menuitem" role="none">
-                <a role="menuitem" class="link" href="/">
+                <router-link role="menuitem" class="link" to="/rats">
                     Товары для крысок
-                </a>
+                </router-link>
             </li>
         </ul>
     </nav>

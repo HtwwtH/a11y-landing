@@ -14,6 +14,7 @@
             aria-hidden="true"
             :src="product.image"
             :alt="product.imageAlt"
+            height="250"
           >
         </div>
 

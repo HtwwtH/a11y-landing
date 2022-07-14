@@ -1,25 +1,63 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HamstersPage from '@/pages/HamstersPage.vue'
+import GuineaPigsPage from '@/pages/GuineaPigsPage.vue'
+import RatsPage from '@/pages/RatsPage.vue'
 
 const routes = [
-    {
-        path: '/',
-        name: 'HamstersPage',
-        component: HamstersPage,
-        meta: {
-            title: 'Магазин для грызунов - товары для хомяков',
-            metaTags: [
-              {
-                name: 'description',
-                content: 'Товары для хомяков.'
-              },
-              {
-                property: 'og:description',
-                content: 'Товары для хомяков.'
-              }
-            ]
-          }
+  {
+    path: '/',
+    name: 'HamstersPage',
+    component: HamstersPage,
+    meta: {
+      title: 'Магазин для грызунов - товары для хомяков',
+      metaTags: [
+        {
+          name: 'description',
+          content: 'Товары для хомяков.'
+        },
+        {
+          property: 'og:description',
+          content: 'Товары для хомяков.'
+        }
+      ]
     }
+  },
+  {
+    path: '/guinea-pigs',
+    name: 'GuineaPigsPage',
+    component: GuineaPigsPage,
+    meta: {
+      title: 'Магазин для грызунов - товары для морских свинок',
+      metaTags: [
+        {
+          name: 'description',
+          content: 'Товары для морских свинок.'
+        },
+        {
+          property: 'og:description',
+          content: 'Товары для морских свинок.'
+        }
+      ]
+    }
+  },
+  {
+    path: '/rats',
+    name: 'RatsPage',
+    component: RatsPage,
+    meta: {
+      title: 'Магазин для грызунов - товары для крыс',
+      metaTags: [
+        {
+          name: 'description',
+          content: 'Товары для крыс.'
+        },
+        {
+          property: 'og:description',
+          content: 'Товары для крыс.'
+        }
+      ]
+    }
+  }
 ]
 
 const router = createRouter ({

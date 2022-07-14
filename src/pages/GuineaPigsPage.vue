@@ -1,7 +1,7 @@
 <template>
   <main id="main-content" class="content container">
     <section class="content__catalog">
-      <h1 tabindex="0" class="h1">Товары для хомяков</h1>
+      <h1 tabindex="0" class="h1">Товары для морских свинок</h1>
       <catalog-sorting
         :chosen-option="chosenOption"
         label="Сортировать по:"
@@ -14,13 +14,13 @@
 
     <section class="content__video">
       <a class="skip-link" href="#tabs" title="К следующему разделу">Пропустить</a>
-      <h2 class="h1">Видео о хомяках</h2>
+      <h2 class="h1">Видео о морских свинках</h2>
       <div class="video">
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/JPXREWCtN3w"
-          title="YouTube video player, видео про хомяков"
+          src="https://www.youtube.com/embed/l_xYyfNb-lI"
+          title="YouTube video player, видео про морских свинок"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
@@ -29,7 +29,7 @@
     </section>
 
     <section id="tabs" class="content__tabs">
-      <h2 class="h1">Подробнее о товарах для хомяков</h2>
+      <h2 class="h1">Подробнее о товарах для морских свинок</h2>
       <content-tabs :tabs="tabs" />
     </section>
 
@@ -48,7 +48,7 @@
   import { ref, computed, nextTick } from 'vue'
   import { useStore } from 'vuex'
 
-  import { products, tabs } from '@/bd/hamsters.js'
+  import { products, tabs } from '@/bd/guinea-pigs.js'
 
   const options = [
     {

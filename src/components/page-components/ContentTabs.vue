@@ -13,7 +13,7 @@
         class="button"
         :class="[ activeTab === 1 ? 'button--black' : 'button--white' ]"
       >
-        <span class="focus">О хомяках</span>
+        <span class="focus">{{ tabs[0].title }}</span>
       </button>
       <button
         ref="tab2"
@@ -27,7 +27,7 @@
         class="button"
         :class="[ activeTab === 2 ? 'button--black' : 'button--white' ]"
       >
-        <span class="focus">О товарах</span>
+        <span class="focus">{{ tabs[1].title }}</span>
       </button>
     </div>
 
@@ -39,13 +39,7 @@
       class="tabpanel__content"
       :class="{ 'd-none' : activeTab !== 1 }"
     >
-      <p>
-        Lorem mauris mi dapibus accumsan purus efficitur tristique vivamus per placerat iaculis, ridiculus dolor lacus curabitur magna finibus ullamcorper massa phasellus tellus etiam, eleifend taciti suscipit integer augue dui metus molestie nullam at. Ullamcorper suscipit arcu porta aenean non vestibulum, sagittis netus phasellus fermentum a urna fusce, velit ad nec semper interdum. Erat massa nisi congue aliquam a accumsan ante efficitur quisque tempus, condimentum faucibus tellus posuere purus justo sit mi ut sed scelerisque, ac proin nullam penatibus pretium neque suscipit vestibulum mattis.<br /><br />
-
-        Lorem mauris mi dapibus accumsan purus efficitur tristique vivamus per placerat iaculis, ridiculus dolor lacus curabitur magna finibus ullamcorper massa phasellus tellus etiam, eleifend taciti suscipit integer augue dui metus molestie nullam at. Ullamcorper suscipit arcu porta aenean non vestibulum, sagittis netus phasellus fermentum a urna fusce, velit ad nec semper interdum. Erat massa nisi congue aliquam a accumsan ante efficitur quisque tempus, condimentum faucibus tellus posuere purus justo sit mi ut sed scelerisque, ac proin nullam penatibus pretium neque suscipit vestibulum mattis.<br /><br />
-
-        Lorem mauris mi dapibus accumsan purus efficitur tristique vivamus per placerat iaculis, ridiculus dolor lacus curabitur magna finibus ullamcorper massa phasellus tellus etiam, eleifend taciti suscipit integer augue dui metus molestie nullam at. Ullamcorper suscipit arcu porta aenean non vestibulum, sagittis netus phasellus fermentum a urna fusce, velit ad nec semper interdum. Erat massa nisi congue aliquam a accumsan ante efficitur quisque tempus, condimentum faucibus tellus posuere purus justo sit mi ut sed scelerisque, ac proin nullam penatibus pretium neque suscipit vestibulum mattis.
-      </p>
+      <p v-html="tabs[0].text"></p>
     </div>
     <div
       id="tabpanel-2"
@@ -55,11 +49,7 @@
       class="tabpanel__content"
       :class="{ 'd-none' : activeTab !== 2 }"
     >
-      <p>
-        Lorem mauris mi dapibus accumsan purus efficitur tristique vivamus per placerat iaculis, ridiculus dolor lacus curabitur magna finibus ullamcorper massa phasellus tellus etiam, eleifend taciti suscipit integer augue dui metus molestie nullam at. Ullamcorper suscipit arcu porta aenean non vestibulum, sagittis netus phasellus fermentum a urna fusce, velit ad nec semper interdum. Erat massa nisi congue aliquam a accumsan ante efficitur quisque tempus, condimentum faucibus tellus posuere purus justo sit mi ut sed scelerisque, ac proin nullam penatibus pretium neque suscipit vestibulum mattis.<br /><br />
-
-        Lorem mauris mi dapibus accumsan purus efficitur tristique vivamus per placerat iaculis, ridiculus dolor lacus curabitur magna finibus ullamcorper massa phasellus tellus etiam, eleifend taciti suscipit integer augue dui metus molestie nullam at. Ullamcorper suscipit arcu porta aenean non vestibulum, sagittis netus phasellus fermentum a urna fusc
-      </p>
+      <p v-html="tabs[1].text"></p>
     </div>
   </div>
 </template>
@@ -67,6 +57,13 @@
 <script>
 export default {
   name: 'ContentTabs',
+
+  props: {
+    tabs: {
+      type: Array,
+      default: () => []
+    }
+  },
 
   data() {
     return {

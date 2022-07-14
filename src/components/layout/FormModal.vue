@@ -2,7 +2,6 @@
   <div class="modal">
     <div class="modal__bg">
         <form
-            v-if="modalVisible"
             ref="formRef"
             role="dialog"
             class="modal__body"
@@ -77,15 +76,11 @@
                 Отправить
             </button>
         </form>
-
-        <thank-modal v-else-if="thankModalVisible" />
     </div>
   </div>
 </template>
 
 <script>
-import ThankModal from '@/components/layout/ThankModal.vue'
-
 import vClickOutside from 'click-outside-vue3'
 import useVuelidate from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
@@ -94,17 +89,13 @@ import { reactive, computed, onMounted, onUnmounted, ref } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
-    name: 'AppModal',
-
-    components: {
-        ThankModal
-    },
+    name: 'FormModal',
 
     directives: {
         clickOutside: vClickOutside.directive
     },
 
-    setup () {
+    setup ({ emit }) {
         const store = useStore()
         const productTitle = computed(() => store.state.modalTitle)
 
@@ -124,14 +115,11 @@ export default {
 
         const hideModal = () => store.commit('hideModal')
 
-        const modalVisible = computed(() => store.getters.modalVisible)
-        const thankModalVisible = computed(() => store.getters.thankModalVisible)
-
         const submitForm = async() => {
             const isFormCorrect = await v$.value.$validate()
             if (isFormCorrect) {
                 hideModal()
-                store.commit('showThankModal')
+                emit('showThankModal')
             } else {
                 if (v$.value.$errors[0].$property === 'username') {
                     inputs.value[0].focus()
@@ -160,8 +148,6 @@ export default {
         return {
             hideModal,
             submitForm,
-            modalVisible,
-            thankModalVisible,
             formRef,
             inputs,
             productTitle,
