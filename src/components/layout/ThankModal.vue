@@ -9,7 +9,6 @@
             aria-modal="true"
             v-click-outside="hideModal"
             @keyup.esc.prevent="hideModal"
-            @keydown.enter.prevent="hideModal"
             tabindex="0"
         >
             <h2 id="modal_label" class="h2">Спасибо за ваш заказ!</h2>

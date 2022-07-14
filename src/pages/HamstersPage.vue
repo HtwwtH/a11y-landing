@@ -45,97 +45,15 @@
   import AppModal from '@/components/layout/AppModal.vue'
   import ThankModal from '@/components/layout/ThankModal.vue'
 
-  import { ref, computed, nextTick } from 'vue'
-  import { useStore } from 'vuex'
+  import { tabs } from '@/bd/hamsters.js'
 
-  import { products, tabs } from '@/bd/hamsters.js'
+  import { useModal, useProducts } from '@/hooks/usePage.js'
 
-  const options = [
-    {
-      id: 0,
-      value: 'По возрастанию цены',
-    },
-    {
-      id: 1,
-      value: 'По убыванию цены',
-    },
-    {
-      id: 2,
-      value: 'По популярности',
-    },
-    {
-      id: 3,
-      value: 'Нет сортировки',
-    },
-  ]
+  const { modalVisible, thankModalVisible, showThankModal } = useModal()
+  const { chosenOption, sortedproductsList, setValue } = useProducts()
 
-  const chosenOption = ref(null)
-
-  const setValue = (id) => {
-    chosenOption.value = options[id];
-  }
-
-  const productsList = ref(products)
-
-  const sortedproductsList = computed(() => {
-    if (chosenOption.value && chosenOption.value.id === 0) {
-      return productsList.value.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0))
-    }
-    else if (chosenOption.value && chosenOption.value.id === 1) {
-      return productsList.value.sort((a, b) => (a.price < b.price) ? 1 : ((b.price < a.price) ? -1 : 0))
-    }
-    else if (chosenOption.value && chosenOption.value.id === 2) {
-      return productsList.value.sort((a, b) => (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0))
-    }
-    return productsList.value;
-  })
-
-  const store = useStore()
-
-  const modalVisible = computed(() => store.getters.modalVisible)
-  const thankModalVisible = computed(() => store.getters.thankModalVisible)
-
-  const showThankModal = async() => {
-    console.log('showThankModal')
-    await nextTick()
-    store.commit('showThankModal')
-  }
 </script>
 
 <style lang="scss">
-  .h1 {
-      margin-top: 12px;
-      margin-bottom: 24px;
-  }
-
-  .content {
-    &__video {
-      position: relative;
-      margin-top: 125px;
-
-      .skip-link {
-        top: 0;
-        left: -600px;
-        transition: left 0.3s ease;
-
-        &:focus {
-          left: 0;
-        }
-      }
-
-      .video {
-        display: flex;
-        justify-content: center;
-        margin-top: 34px;
-      }
-    }
-
-    &__tabs {
-      margin-top: 125px;
-
-      .h2 {
-        margin-bottom: 54px;
-      }
-    }
-  }
+@import '@/assets/scss/page.scss'
 </style>

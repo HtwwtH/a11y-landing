@@ -1,0 +1,35 @@
+.h1 {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.content {
+  &__video {
+    position: relative;
+    margin-top: 125px;
+
+    .skip-link {
+      top: 0;
+      left: -600px;
+      transition: left 0.3s ease;
+
+      &:focus {
+        left: 0;
+      }
+    }
+
+    .video {
+      display: flex;
+      justify-content: center;
+      margin-top: 34px;
+    }
+  }
+
+  &__tabs {
+    margin-top: 125px;
+
+    .h2 {
+      margin-bottom: 54px;
+    }
+  }
+}

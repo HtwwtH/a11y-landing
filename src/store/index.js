@@ -23,12 +23,10 @@ export default createStore({
     },
 
     showThankModal(state) {
-      console.log('showThankModal')
       state.thankModalVisible = true
     },
 
     hideThankModal(state) {
-      console.log('hideThankModal')
       state.thankModalVisible = false
     },
   },
