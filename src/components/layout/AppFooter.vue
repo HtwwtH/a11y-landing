@@ -36,6 +36,7 @@
                         placeholder="E-mail"
                         v-model="state.email"
                         @blur="v$.email.$touch"
+                        aria-labelledby="subscribe"
                         :aria-invalid="v$.email.$invalid"
                     >
                     <span v-if="v$.email.$errors.length && v$.email.$errors[0].$validator === 'required'" class="label__error">Не заполнено поле email</span>
