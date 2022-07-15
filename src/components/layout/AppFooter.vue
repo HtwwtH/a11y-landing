@@ -49,7 +49,7 @@
                 >
                     Подписаться
                 </button>
-                <Teleport to="#subscribemodal">
+                <Teleport to="#modal">
                     <thank-subscribe v-if="thankSubscribeVisible" @close-thank="focusSubscribeBtn" />
                 </Teleport>
             </div>
@@ -132,7 +132,6 @@
             const { thankSubscribeVisible } = useModal()
 
             const focusSubscribeBtn = () => {
-                console.log(subscribeBtnRef)
                 subscribeBtnRef.value.focus()
             }
 

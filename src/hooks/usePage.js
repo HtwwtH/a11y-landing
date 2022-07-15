@@ -1,7 +1,6 @@
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 
-import { products } from '@/bd/hamsters.js'
 import { options } from '@/bd/options.js'
 
 export function useModal() {
@@ -18,7 +17,7 @@ export function useModal() {
     }
 }
 
-export function useProducts() {
+export function useProducts(products) {
     const chosenOption = ref(null)
 
     const setValue = (id) => {

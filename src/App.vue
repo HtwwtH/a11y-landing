@@ -7,7 +7,6 @@ import AppFooter from '@/components/layout/AppFooter.vue'
   <app-header />
   <router-view />
   <div id="modal"></div>
-  <div id="subscribemodal"></div>
   <app-footer />
 </template>
 

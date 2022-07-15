@@ -110,11 +110,12 @@ export default {
 
     const { modalVisible, thankModalVisible } = useModal()
 
+    const activeProductId = ref(0)
+
     const setModalTitle = (title) => store.commit('setModalTitle', title)
     const showModal = (status) => store.commit('showModal', status)
 
     const setModal = (title, index) => {
-      console.log('setModal ', title)
       setModalTitle(title)
       showModal(true)
       activeProductId.value = index
@@ -123,11 +124,8 @@ export default {
     const btn = ref(null)
 
     const focusBtn = (index) => {
-      console.log(btn)
       btn.value[index].focus()
     }
-
-    const activeProductId = ref(0)
 
     return {
       setModal,

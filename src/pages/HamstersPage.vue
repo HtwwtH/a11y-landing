@@ -40,11 +40,12 @@
   import CatalogCards from '@/components/page-components/CatalogCards.vue'
   import ContentTabs from '@/components/page-components/ContentTabs.vue'
 
+  import { products } from '@/bd/hamsters.js'
   import { tabs } from '@/bd/hamsters.js'
 
   import { useProducts } from '@/hooks/usePage.js'
 
-  const { options, chosenOption, sortedproductsList, setValue } = useProducts()
+  const { options, chosenOption, sortedproductsList, setValue } = useProducts(products)
 
 </script>
 
