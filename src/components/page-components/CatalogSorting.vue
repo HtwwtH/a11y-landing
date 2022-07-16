@@ -22,7 +22,7 @@
           </span>
 
           <img
-            src="src/assets/images/icons/dropdown-icon.svg"
+            src="@/assets/images/icons/dropdown-icon.svg"
             class="dropdown"
             aria-hidden="true"
             alt=""
