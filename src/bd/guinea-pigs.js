@@ -2,7 +2,7 @@ export const products = [
     {
         id: 0,
         title: 'Коврик для морской свинки',
-        image: 'src/assets/images/products/guinea-pigs/carpet.jpg',
+        image: '/products/guinea-pigs/carpet.jpg',
         imageAlt: 'Морская свинка на деревянном коврике',
         oldPrice: 200,
         price: 100,
@@ -11,7 +11,7 @@ export const products = [
     {
         id: 1,
         title: 'Опилки',
-        image: 'src/assets/images/products/guinea-pigs/opilki.jpg',
+        image: '/products/guinea-pigs/opilki.jpg',
         imageAlt: 'Морская свинка на опилках',
         oldPrice: 150,
         price: 80,
@@ -20,7 +20,7 @@ export const products = [
     {
         id: 2,
         title: 'Еда для грызунов',
-        image: 'src/assets/images/products/guinea-pigs/food.jpg',
+        image: '/products/guinea-pigs/food.jpg',
         imageAlt: 'Зерна и сушеные овощи',
         price: 100,
         rating: 5,
@@ -28,7 +28,7 @@ export const products = [
     {
         id: 3,
         title: 'Расческа для морской свинки',
-        image: 'src/assets/images/products/guinea-pigs/comb.jpg',
+        image: '/products/guinea-pigs/comb.jpg',
         imageAlt: 'Расческа для морской свинки',
         price: 40,
         rating: 3,

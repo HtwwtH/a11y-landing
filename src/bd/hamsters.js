@@ -2,7 +2,7 @@ export const products = [
     {
         id: 0,
         title: 'Коврик для хомяка',
-        image: 'src/assets/images/products/hamsters/carpet.jpg',
+        image: '/products/hamsters/carpet.jpg',
         imageAlt: 'Хомячок на мягком пушистом коврике',
         oldPrice: 200,
         price: 100,
@@ -11,7 +11,7 @@ export const products = [
     {
         id: 1,
         title: 'Опилки',
-        image: 'src/assets/images/products/hamsters/opilki.jpg',
+        image: '/products/hamsters/opilki.jpg',
         imageAlt: 'Хомячок на опилках',
         oldPrice: 200,
         price: 100,
@@ -20,7 +20,7 @@ export const products = [
     {
         id: 2,
         title: 'Тоннель для хомяка',
-        image: 'src/assets/images/products/hamsters/tunnel.jpg',
+        image: '/products/hamsters/tunnel.jpg',
         imageAlt: 'Хомячок в туннеле',
         price: 50,
         rating: 4.5,
@@ -28,7 +28,7 @@ export const products = [
     {
         id: 3,
         title: 'Еда для грызунов',
-        image: 'src/assets/images/products/hamsters/food.jpg',
+        image: '/products/hamsters/food.jpg',
         imageAlt: 'Зерна и сушеные овощи',
         price: 100,
         rating: 5,
@@ -36,7 +36,7 @@ export const products = [
     {
         id: 4,
         title: 'Дом для хомяка',
-        image: 'src/assets/images/products/hamsters/house.jpg',
+        image: '/products/hamsters/house.jpg',
         imageAlt: 'Желтый пластиковый дом для хомяка',
         oldPrice: 500,
         price: 400,
