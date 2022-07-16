@@ -9,7 +9,7 @@ const routes = [
     name: 'HamstersPage',
     component: HamstersPage,
     meta: {
-      title: 'Магазин для грызунов - товары для хомяков',
+      title: 'Магазин для грызунов - товары для хомяков (от Алины Поважнюк)',
       metaTags: [
         {
           name: 'description',
@@ -27,7 +27,7 @@ const routes = [
     name: 'GuineaPigsPage',
     component: GuineaPigsPage,
     meta: {
-      title: 'Магазин для грызунов - товары для морских свинок',
+      title: 'Магазин для грызунов - товары для морских свинок (от Алины Поважнюк)',
       metaTags: [
         {
           name: 'description',
@@ -45,7 +45,7 @@ const routes = [
     name: 'RatsPage',
     component: RatsPage,
     meta: {
-      title: 'Магазин для грызунов - товары для крыс',
+      title: 'Магазин для грызунов - товары для крыс (от Алины Поважнюк)',
       metaTags: [
         {
           name: 'description',
