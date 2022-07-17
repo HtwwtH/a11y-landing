@@ -1,8 +1,14 @@
+import img1 from '@/assets/images/products/rats/carpet.jpg'
+import img2 from '@/assets/images/products/rats/hammok.jpg'
+import img3 from '@/assets/images/products/rats/toy.jpg'
+import img4 from '@/assets/images/products/rats/food.jpg'
+import img5 from '@/assets/images/products/rats/home.jpg'
+
 export const products = [
     {
         id: 0,
         title: 'Коврик для крысы',
-        image: '/products/rats/carpet.jpg',
+        image: img1,
         imageAlt: 'Крыса на хлопковом коврике',
         oldPrice: 200,
         price: 100,
@@ -11,7 +17,7 @@ export const products = [
     {
         id: 1,
         title: 'Гамак для крысы',
-        image: '/products/rats/hammok.jpg',
+        image: img2,
         imageAlt: 'Крыса на гамаке',
         oldPrice: 200,
         price: 100,
@@ -20,7 +26,7 @@ export const products = [
     {
         id: 2,
         title: 'Игрушка в виде кокоса',
-        image: '/products/rats/toy.jpg',
+        image: img3,
         imageAlt: 'Крысы сидят в игрушке в виде кокоса',
         price: 50,
         rating: 4.5,
@@ -28,7 +34,7 @@ export const products = [
     {
         id: 3,
         title: 'Еда для грызунов',
-        image: '/products/rats/food.jpg',
+        image: img4,
         imageAlt: 'Зерна и сушеные овощи',
         price: 100,
         rating: 5,
@@ -36,7 +42,7 @@ export const products = [
     {
         id: 4,
         title: 'Клетка',
-        image: '/products/rats/home.jpg',
+        image: img5,
         imageAlt: 'Клетка для крысы',
         oldPrice: 500,
         price: 400,

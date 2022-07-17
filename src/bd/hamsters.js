@@ -1,8 +1,14 @@
+import img1 from '@/assets/images/products/hamsters/carpet.jpg'
+import img2 from '@/assets/images/products/hamsters/opilki.jpg'
+import img3 from '@/assets/images/products/hamsters/tunnel.jpg'
+import img4 from '@/assets/images/products/hamsters/food.jpg'
+import img5 from '@/assets/images/products/hamsters/house.jpg'
+
 export const products = [
     {
         id: 0,
         title: 'Коврик для хомяка',
-        image: '/products/hamsters/carpet.jpg',
+        image: img1,
         imageAlt: 'Хомячок на мягком пушистом коврике',
         oldPrice: 200,
         price: 100,
@@ -11,7 +17,7 @@ export const products = [
     {
         id: 1,
         title: 'Опилки',
-        image: '/products/hamsters/opilki.jpg',
+        image: img2,
         imageAlt: 'Хомячок на опилках',
         oldPrice: 200,
         price: 100,
@@ -20,7 +26,7 @@ export const products = [
     {
         id: 2,
         title: 'Тоннель для хомяка',
-        image: '/products/hamsters/tunnel.jpg',
+        image: img3,
         imageAlt: 'Хомячок в туннеле',
         price: 50,
         rating: 4.5,
@@ -28,7 +34,7 @@ export const products = [
     {
         id: 3,
         title: 'Еда для грызунов',
-        image: '/products/hamsters/food.jpg',
+        image: img4,
         imageAlt: 'Зерна и сушеные овощи',
         price: 100,
         rating: 5,
@@ -36,7 +42,7 @@ export const products = [
     {
         id: 4,
         title: 'Дом для хомяка',
-        image: '/products/hamsters/house.jpg',
+        image: img5,
         imageAlt: 'Желтый пластиковый дом для хомяка',
         oldPrice: 500,
         price: 400,
